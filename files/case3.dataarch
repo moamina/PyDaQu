@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DA:DataArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DA="DataArch">
+  <dataNodes>
+    <behaviouralElements xsi:type="DA:ReceiveData" outgoing="//@dataNodes.0/@behaviouralElements.2" fromMessagePorts="//@dataNodes.0/@ports.1"/>
+    <behaviouralElements xsi:type="DA:Process" outgoing="//@dataNodes.0/@behaviouralElements.4" incoming="//@dataNodes.0/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.0" target="//@dataNodes.0/@behaviouralElements.1"/>
+    <behaviouralElements xsi:type="DA:SendData" incoming="//@dataNodes.0/@behaviouralElements.4" toMessagePorts="//@dataNodes.0/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.1" target="//@dataNodes.0/@behaviouralElements.3"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+    <ports xsi:type="DA:InMessagePort"/>
+  </dataNodes>
+  <dataNodes>
+    <behaviouralElements xsi:type="DA:Generate" outgoing="//@dataNodes.1/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:SendData" incoming="//@dataNodes.1/@behaviouralElements.2" toMessagePorts="//@dataNodes.1/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.0" target="//@dataNodes.1/@behaviouralElements.1"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+  </dataNodes>
+  <dataNodes>
+    <behaviouralElements xsi:type="DA:ReceiveData" outgoing="//@dataNodes.2/@behaviouralElements.2" fromMessagePorts="//@dataNodes.2/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Relational" outgoing="//@dataNodes.2/@behaviouralElements.4" incoming="//@dataNodes.2/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.2/@behaviouralElements.0" target="//@dataNodes.2/@behaviouralElements.1"/>
+    <behaviouralElements xsi:type="DA:VerifyData" incoming="//@dataNodes.2/@behaviouralElements.4">
+      <QualityMetrics>Completeness</QualityMetrics>
+    </behaviouralElements>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.2/@behaviouralElements.1" target="//@dataNodes.2/@behaviouralElements.3"/>
+    <ports xsi:type="DA:InMessagePort"/>
+  </dataNodes>
+  <dataConnection source="//@dataNodes.1/@ports.0" target="//@dataNodes.0/@ports.1"/>
+  <dataConnection source="//@dataNodes.0/@ports.0" target="//@dataNodes.2/@ports.0"/>
+</DA:DataArchitecture>

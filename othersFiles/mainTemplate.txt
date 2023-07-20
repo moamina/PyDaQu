@@ -1,0 +1,22 @@
+import great_expectations as ge
+
+from Entities.batches import Batch
+from Entities.checkpoints import CheckPointConfig
+from Entities.datasources import DataSource
+from Entities.expectationUtiles import ExpectationUtil
+from Entities.expectationsuites import ExpectationSuite
+
+
+#Get Context
+context = ge.get_context()
+
+if __name__ == '__main__':
+
+	#Data Source Code
+    dataSource=DataSource({UserName},{Password},{IPAddress},{Port},{DatabaseName})
+    context.add_datasource(**dataSource.{DatabaseConfigurationMethod}())
+
+    condition =""
+    list_of_expectation_configuration=[]
+    
+    {tableCode}

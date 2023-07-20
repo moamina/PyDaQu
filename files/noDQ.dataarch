@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DA:DataArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DA="DataArch">
+  <dataNodes>
+    <behaviouralElements xsi:type="DA:Relational" incoming="//@dataNodes.0/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:VerifyData" outgoing="//@dataNodes.0/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.1" target="//@dataNodes.0/@behaviouralElements.0"/>
+  </dataNodes>
+</DA:DataArchitecture>

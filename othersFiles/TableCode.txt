@@ -1,0 +1,22 @@
+##########################################################################################
+	# Table Name
+    tableName={TableName}
+#---------------------------------        
+    # List of expectations for each column
+    {ExpectationCode}
+    
+    # add list of expectation configuration to test suite
+    suite = ExpectationSuite.create_expectation_suite(tableName,context ,list_of_expectation_configuration)
+    context.save_expectation_suite(suite)
+    list_of_expectation_configuration.clear()
+
+    # getting batch requests for the tables
+    batch_request = Batch.get_batch(dataSource.dataSchema, tableName, condition)
+
+    # running tests on tables
+    print(tableName, " ", batch_request)
+    CheckPointConfig.run_check_point_config(context,batch_request, tableName)
+    
+    # build and open Data Docs
+    context.build_data_docs()
+    context.open_data_docs()

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DA:DataArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DA="DataArch">
+  <dataNodes NodeName=" Printers Data">
+    <behaviouralElements xsi:type="DA:Generate" name="Printer 1" outgoing="//@dataNodes.0/@behaviouralElements.12"/>
+    <behaviouralElements xsi:type="DA:Generate" name="Printer 2" outgoing="//@dataNodes.0/@behaviouralElements.13"/>
+    <behaviouralElements xsi:type="DA:Generate" name="Printer 3" outgoing="//@dataNodes.0/@behaviouralElements.14"/>
+    <behaviouralElements xsi:type="DA:TextFile" name="Error Files" outgoing="//@dataNodes.0/@behaviouralElements.16" incoming="//@dataNodes.0/@behaviouralElements.15"/>
+    <behaviouralElements xsi:type="DA:TextFile" name="Error Files" outgoing="//@dataNodes.0/@behaviouralElements.18" incoming="//@dataNodes.0/@behaviouralElements.17"/>
+    <behaviouralElements xsi:type="DA:TextFile" name="Error Files" outgoing="//@dataNodes.0/@behaviouralElements.20" incoming="//@dataNodes.0/@behaviouralElements.19"/>
+    <behaviouralElements xsi:type="DA:JSON" outgoing="//@dataNodes.0/@behaviouralElements.15" incoming="//@dataNodes.0/@behaviouralElements.12"/>
+    <behaviouralElements xsi:type="DA:JSON" outgoing="//@dataNodes.0/@behaviouralElements.17" incoming="//@dataNodes.0/@behaviouralElements.13"/>
+    <behaviouralElements xsi:type="DA:JSON" outgoing="//@dataNodes.0/@behaviouralElements.19" incoming="//@dataNodes.0/@behaviouralElements.14"/>
+    <behaviouralElements xsi:type="DA:SendData" name="Send Files" incoming="//@dataNodes.0/@behaviouralElements.16" toMessagePorts="//@dataNodes.0/@ports.0"/>
+    <behaviouralElements xsi:type="DA:SendData" name="Send Files" incoming="//@dataNodes.0/@behaviouralElements.18" toMessagePorts="//@dataNodes.0/@ports.1"/>
+    <behaviouralElements xsi:type="DA:SendData" name="Send Files" incoming="//@dataNodes.0/@behaviouralElements.20" toMessagePorts="//@dataNodes.0/@ports.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.0" target="//@dataNodes.0/@behaviouralElements.6"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.1" target="//@dataNodes.0/@behaviouralElements.7"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.2" target="//@dataNodes.0/@behaviouralElements.8"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.6" target="//@dataNodes.0/@behaviouralElements.3"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.3" target="//@dataNodes.0/@behaviouralElements.9"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.7" target="//@dataNodes.0/@behaviouralElements.4"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.4" target="//@dataNodes.0/@behaviouralElements.10"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.8" target="//@dataNodes.0/@behaviouralElements.5"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.5" target="//@dataNodes.0/@behaviouralElements.11"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+  </dataNodes>
+  <dataNodes NodeName="AWS ">
+    <behaviouralElements xsi:type="DA:Cloud" outgoing="//@dataNodes.1/@behaviouralElements.6" incoming="//@dataNodes.1/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:ReceiveData" outgoing="//@dataNodes.1/@behaviouralElements.2" fromMessagePorts="//@dataNodes.1/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.1" target="//@dataNodes.1/@behaviouralElements.0"/>
+    <behaviouralElements xsi:type="DA:File_System" name="AWS - S3" outgoing="//@dataNodes.1/@behaviouralElements.12 //@dataNodes.1/@behaviouralElements.19" incoming="//@dataNodes.1/@behaviouralElements.9 //@dataNodes.1/@behaviouralElements.24"/>
+    <behaviouralElements xsi:type="DA:JSON" outgoing="//@dataNodes.1/@behaviouralElements.7" incoming="//@dataNodes.1/@behaviouralElements.6"/>
+    <behaviouralElements xsi:type="DA:TextFile" outgoing="//@dataNodes.1/@behaviouralElements.10" incoming="//@dataNodes.1/@behaviouralElements.7"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.0" target="//@dataNodes.1/@behaviouralElements.4"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.4" target="//@dataNodes.1/@behaviouralElements.5"/>
+    <behaviouralElements xsi:type="DA:Save" name="Store" outgoing="//@dataNodes.1/@behaviouralElements.9" incoming="//@dataNodes.1/@behaviouralElements.10"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.8" target="//@dataNodes.1/@behaviouralElements.3"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.5" target="//@dataNodes.1/@behaviouralElements.8"/>
+    <behaviouralElements xsi:type="DA:Query_Report" name="Crawler" outgoing="//@dataNodes.1/@behaviouralElements.15" incoming="//@dataNodes.1/@behaviouralElements.12"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.3" target="//@dataNodes.1/@behaviouralElements.11"/>
+    <behaviouralElements xsi:type="DA:SendData" name="Send Tables" incoming="//@dataNodes.1/@behaviouralElements.16" toMessagePorts="//@dataNodes.1/@ports.1"/>
+    <behaviouralElements xsi:type="DA:RelationalDB" name="Tables" outgoing="//@dataNodes.1/@behaviouralElements.16" incoming="//@dataNodes.1/@behaviouralElements.15"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.11" target="//@dataNodes.1/@behaviouralElements.14"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.14" target="//@dataNodes.1/@behaviouralElements.13"/>
+    <behaviouralElements xsi:type="DA:SendData" name="Move to Processing" incoming="//@dataNodes.1/@behaviouralElements.20" toMessagePorts="//@dataNodes.1/@ports.2"/>
+    <behaviouralElements xsi:type="DA:Retrieve" name=" Retrieve Raw Data" outgoing="//@dataNodes.1/@behaviouralElements.20" incoming="//@dataNodes.1/@behaviouralElements.22"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.3" target="//@dataNodes.1/@behaviouralElements.21"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.18" target="//@dataNodes.1/@behaviouralElements.17"/>
+    <behaviouralElements xsi:type="DA:Batch" outgoing="//@dataNodes.1/@behaviouralElements.22" incoming="//@dataNodes.1/@behaviouralElements.19"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.21" target="//@dataNodes.1/@behaviouralElements.18"/>
+    <behaviouralElements xsi:type="DA:Validate" outgoing="//@dataNodes.1/@behaviouralElements.24"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.1/@behaviouralElements.23" target="//@dataNodes.1/@behaviouralElements.3"/>
+    <ports xsi:type="DA:InMessagePort"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+  </dataNodes>
+  <dataNodes NodeName="Customers Data">
+    <behaviouralElements xsi:type="DA:ReceiveData" name="Tabular Raw Data" outgoing="//@dataNodes.2/@behaviouralElements.2" fromMessagePorts="//@dataNodes.2/@ports.1"/>
+    <behaviouralElements xsi:type="DA:Visualize" incoming="//@dataNodes.2/@behaviouralElements.2 //@dataNodes.2/@behaviouralElements.4"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.2/@behaviouralElements.0" target="//@dataNodes.2/@behaviouralElements.1"/>
+    <behaviouralElements xsi:type="DA:ReceiveData" name="Receive Query" outgoing="//@dataNodes.2/@behaviouralElements.4" fromMessagePorts="//@dataNodes.2/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.2/@behaviouralElements.3" target="//@dataNodes.2/@behaviouralElements.1"/>
+    <ports xsi:type="DA:InMessagePort"/>
+    <ports xsi:type="DA:InMessagePort"/>
+  </dataNodes>
+  <dataNodes NodeName="Processing">
+    <behaviouralElements xsi:type="DA:ReceiveData" outgoing="//@dataNodes.3/@behaviouralElements.2" fromMessagePorts="//@dataNodes.3/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Tranfrom" outgoing="//@dataNodes.3/@behaviouralElements.21" incoming="//@dataNodes.3/@behaviouralElements.9"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.0" target="//@dataNodes.3/@behaviouralElements.8"/>
+    <behaviouralElements xsi:type="DA:ColumnOriented" name="Parquet" outgoing="//@dataNodes.3/@behaviouralElements.5 //@dataNodes.3/@behaviouralElements.17" incoming="//@dataNodes.3/@behaviouralElements.21"/>
+    <behaviouralElements xsi:type="DA:Tranfrom" outgoing="//@dataNodes.3/@behaviouralElements.7" incoming="//@dataNodes.3/@behaviouralElements.11"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.3" target="//@dataNodes.3/@behaviouralElements.10"/>
+    <behaviouralElements xsi:type="DA:CSV" outgoing="//@dataNodes.3/@behaviouralElements.13" incoming="//@dataNodes.3/@behaviouralElements.7"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.4" target="//@dataNodes.3/@behaviouralElements.6"/>
+    <behaviouralElements xsi:type="DA:Process" outgoing="//@dataNodes.3/@behaviouralElements.9" incoming="//@dataNodes.3/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.8" target="//@dataNodes.3/@behaviouralElements.1"/>
+    <behaviouralElements xsi:type="DA:Retrieve" outgoing="//@dataNodes.3/@behaviouralElements.11" incoming="//@dataNodes.3/@behaviouralElements.5"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.10" target="//@dataNodes.3/@behaviouralElements.4"/>
+    <behaviouralElements xsi:type="DA:Tranfrom" outgoing="//@dataNodes.3/@behaviouralElements.15" incoming="//@dataNodes.3/@behaviouralElements.13"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.6" target="//@dataNodes.3/@behaviouralElements.12"/>
+    <behaviouralElements xsi:type="DA:Relational" name="PostgreSQL" outgoing="//@dataNodes.3/@behaviouralElements.20" incoming="//@dataNodes.3/@behaviouralElements.15 //@dataNodes.3/@behaviouralElements.23"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.12" target="//@dataNodes.3/@behaviouralElements.14"/>
+    <behaviouralElements xsi:type="DA:Query_Report" name="Crawler" outgoing="//@dataNodes.3/@behaviouralElements.19" incoming="//@dataNodes.3/@behaviouralElements.17"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.3" target="//@dataNodes.3/@behaviouralElements.16"/>
+    <behaviouralElements xsi:type="DA:SendData" incoming="//@dataNodes.3/@behaviouralElements.19 //@dataNodes.3/@behaviouralElements.20" toMessagePorts="//@dataNodes.3/@ports.1"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.16" target="//@dataNodes.3/@behaviouralElements.18"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.14" target="//@dataNodes.3/@behaviouralElements.18"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.1" target="//@dataNodes.3/@behaviouralElements.3"/>
+    <behaviouralElements xsi:type="DA:Validate" outgoing="//@dataNodes.3/@behaviouralElements.23"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.3/@behaviouralElements.22" target="//@dataNodes.3/@behaviouralElements.14"/>
+    <ports xsi:type="DA:InMessagePort"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+  </dataNodes>
+  <dataNodes NodeName="Testing SD">
+    <behaviouralElements xsi:type="DA:Generate" name="Simulation Data" outgoing="//@dataNodes.4/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:SendData" incoming="//@dataNodes.4/@behaviouralElements.2" toMessagePorts="//@dataNodes.4/@ports.0"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.4/@behaviouralElements.0" target="//@dataNodes.4/@behaviouralElements.1"/>
+    <ports xsi:type="DA:OutMessagePort"/>
+  </dataNodes>
+  <dataConnection source="//@dataNodes.0/@ports.0" target="//@dataNodes.1/@ports.0"/>
+  <dataConnection source="//@dataNodes.0/@ports.1" target="//@dataNodes.1/@ports.0"/>
+  <dataConnection source="//@dataNodes.0/@ports.2" target="//@dataNodes.1/@ports.0"/>
+  <dataConnection source="//@dataNodes.3/@ports.1" target="//@dataNodes.2/@ports.0"/>
+  <dataConnection source="//@dataNodes.1/@ports.1" target="//@dataNodes.2/@ports.1"/>
+  <dataConnection source="//@dataNodes.1/@ports.2" target="//@dataNodes.3/@ports.0"/>
+  <dataConnection source="//@dataNodes.4/@ports.0" target="//@dataNodes.1/@ports.0"/>
+</DA:DataArchitecture>

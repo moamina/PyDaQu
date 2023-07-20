@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DA:DataArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DA="DataArch">
+  <dataNodes>
+    <behaviouralElements xsi:type="DA:VerifyData" name="Data Quality" outgoing="//@dataNodes.0/@behaviouralElements.2">
+      <QualityMetrics>Accuracy</QualityMetrics>
+    </behaviouralElements>
+    <behaviouralElements xsi:type="DA:Relational" name="RDB1" incoming="//@dataNodes.0/@behaviouralElements.2"/>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.0" target="//@dataNodes.0/@behaviouralElements.1"/>
+    <behaviouralElements xsi:type="DA:Relational" name="RDB2" incoming="//@dataNodes.0/@behaviouralElements.5"/>
+    <behaviouralElements xsi:type="DA:VerifyData" outgoing="//@dataNodes.0/@behaviouralElements.5">
+      <QualityMetrics>Completeness</QualityMetrics>
+      <QualityMetrics>Conformity</QualityMetrics>
+    </behaviouralElements>
+    <behaviouralElements xsi:type="DA:Link" source="//@dataNodes.0/@behaviouralElements.4" target="//@dataNodes.0/@behaviouralElements.3"/>
+  </dataNodes>
+</DA:DataArchitecture>

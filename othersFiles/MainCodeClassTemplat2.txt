@@ -1,0 +1,46 @@
+import great_expectations as ge
+
+from Entities.batches import Batch
+from Entities.checkpoints import CheckPointConfig
+from Entities.datasources import DataSource
+from Entities.expectationUtiles import ExpectationUtil
+from Entities.expectationsuites import ExpectationSuite
+
+
+#Get Context
+context = ge.get_context()
+
+if __name__ == '__main__':
+
+    dataSource=DataSource({UserName},{Password},{IPAddress},{Port},{DatabaseName})
+    context.add_datasource(**dataSource.{DatabaseConfigurationMethod})
+
+    condition =""
+    list_of_expectation_configuration=[]
+    #we need to get list of tables
+    tableName={TableName}
+    # list of columns belong to spesific table
+    #columnsList={Columns} 
+    #["id","sensorName","val","timestamp"]
+
+    #for column in columnsList:
+    	{ExpectationCode}
+        #repeated Generated Code Based on the number of expectations
+        #expectation_configuration = ExpectationUtil.expect_column_values_to_not_be_null_function(column)
+        #list_of_expectation_configuration.append(expectation_configuration)
+
+    suite = ExpectationSuite.create_expectation_suite(tableName,context ,list_of_expectation_configuration)
+    context.save_expectation_suite(suite)
+    list_of_expectation_configuration.clear()
+
+    # getting batch requests for the tables
+    batch_request = Batch.get_batch(dataSource.dataSchema, tableName, condition)
+
+    # running tests on tables
+    print(tableName, " ", batch_request)
+    # (context, batch_request, suite_name)
+    CheckPointConfig.run_check_point_config(context,batch_request, tableName)
+    
+    # build and open Data Docs
+    context.build_data_docs()
+    context.open_data_docs()
